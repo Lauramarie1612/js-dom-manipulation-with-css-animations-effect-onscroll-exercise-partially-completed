@@ -40,76 +40,51 @@ if (sectionOne) {
    via klik. Brug classList.toggle(...) som i eksemplet.
 --------------------------------------------------- */
 
-/* -------------------------------------------------
-   🐶 HUND → anim-scale
-   - Formål: når man klikker på hunden, skal billedet forstørres.
-   - Id i HTML: "dogElem"
-   - CSS-klasse: "anim-scale"
+/* Hund */
+const dogElem = document.getElementById("dogElem");
+if (dogElem) {
+  dogElem.addEventListener("click", function () {
+    this.classList.toggle("anim-scale");
+    soundDog.play();
+  });
+}
 
-   TRIN:
-   1) Find billedet med getElementById("dogElem")
-   2) Tjek om elementet findes (if (dogElem) {...})
-   3) Tilføj en click-eventlistener
-   4) Brug this.classList.toggle("anim-scale") inde i funktionen
---------------------------------------------------- */
+/* Isbjørn */
+const bearElem = document.getElementById("bearElem");
+if (bearElem) {
+  bearElem.addEventListener("click", function () {
+    this.classList.toggle("anim-rotate");
+    soundBear.play();
+  });
+}
 
-/* -------------------------------------------------
-   🐻 ISBJØRN → anim-rotate
-   - Formål: når man klikker på isbjørnen, skal billedet rotere + zoome.
-   - Id i HTML: "bearElem"
-   - CSS-klasse: "anim-rotate"
+/* Hest */
+const horseElem = document.getElementById("horseElem");
+if (horseElem) {
+  horseElem.addEventListener("click", function () {
+    this.classList.toggle("anim-skew");
+    soundHorse.play();
+  });
+}
 
-   TRIN:
-   1) Find billedet med getElementById("bearElem")
-   2) Tjek om elementet findes
-   3) Tilføj en click-eventlistener
-   4) Brug this.classList.toggle("anim-rotate")
---------------------------------------------------- */
+/* Selvvalgt dyr */
+const lionElem = document.getElementById("lionElem");
+if (lionElem) {
+  lionElem.addEventListener("click", function () {
+    this.classList.toggle("anim-pop");
+    soundLion.play();
+  });
+}
 
-/* -------------------------------------------------
-   🐴 HEST → anim-skew
-   - Formål: når man klikker på hesten, skal billedet skævvrides + zoome.
-   - Id i HTML: "horseElem"
-   - CSS-klasse: "anim-skew"
+/* Lydeffekter til dyrene */
+const soundDog = new Audio();
+soundDog.src = "../sound/dog.mp3";
 
-   TRIN:
-   1) Find billedet med getElementById("horseElem")
-   2) Tjek om elementet findes
-   3) Tilføj en click-eventlistener
-   4) Brug this.classList.toggle("anim-skew")
---------------------------------------------------- */
+const soundHorse = new Audio();
+soundHorse.src = "../sound/horse.mp3";
 
-/* -------------------------------------------------
-   4) OPGAVE: LYD VED KLIK
-   I denne opgave skal du tilføje lyd til dine klik-animationer.
+const soundBear = new Audio();
+soundBear.src = "../sound/bear.mp3";
 
-   TRIN:
-   1) Opret tre Audio()-objekter øverst i denne fil.
-      - fx: const soundDog = new Audio();
-      - og tildel lydfilerne en src: soundDog.src = "sound/dog.wav";
-   2) Opret derefter lignende objekter til hest og bjørn.
-   3) Inde i hver klik-eventlistener (ovenfor):
-      - Afspil lyden med .play() på det rigtige lydobjekt.
-      - Sørg for, at afspilning sker efter classList.toggle().
---------------------------------------------------- */
-
-/*
-TODO:
-const soundDog = ...
-const soundHorse = ...
-const soundBear = ...
-*/
-
-/* -------------------------------------------------
-   5) OPGAVE: NY SEKTION – SEC6
-   Du skal selv tilføje en ny sektion i HTML (sec6),
-   skrive CSS-animationer til den, og aktivere den her i JS.
-
-   TRIN:
-   1) Find dit nye element med document.getElementById("<dit-id>")
-   2) Tjek om elementet findes
-   3) Tilføj en eventlistener på "click"
-   4) Inde i funktionen: this.classList.toggle("<din-klik-klasse>")
---------------------------------------------------- */
-
-// TODO: Tilføj din egen klikfunktion for billedet i sec6 her
+const soundLion = new Audio();
+soundLion.src = "../sound/lion.mp3";
